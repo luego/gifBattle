@@ -30,6 +30,8 @@ namespace GitBattleDotnet
 
             services.ConfigureIISIntegration();
 
+            services.ConfigureGifBattleConnection(Configuration);
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
