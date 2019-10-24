@@ -36,6 +36,8 @@ namespace GitBattleDotnet.Extensions
 
             services.AddSingleton<IGifBattleDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<GifBattleDatabaseSettings>>().Value);
+
+            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
         }
     }
 }
