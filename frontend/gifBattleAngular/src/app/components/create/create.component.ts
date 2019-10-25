@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BattleService } from 'src/app/services/battle.service';
 
 @Component({
   selector: 'app-create',
@@ -6,10 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
+  constructor(private http: BattleService) {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

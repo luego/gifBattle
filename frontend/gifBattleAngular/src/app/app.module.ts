@@ -4,17 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateComponent } from './components/create/create.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BattleService } from './services/battle.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CreateComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
+  declarations: [AppComponent, CreateComponent, HomeComponent],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  providers: [BattleService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
