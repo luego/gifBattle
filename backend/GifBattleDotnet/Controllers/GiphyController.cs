@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using GitBattleDotnet.Models;
+using GifBattleDotnet.Models;
 using GitBattleDotnet.Utils;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,11 +15,11 @@ namespace GitBattleDotnet.Controllers
 
         [HttpGet]
         [Route("random")]
-        public async Task<ActionResult<Gif>> RandomAsync()
+        public async Task<ActionResult<GifGiphy>> RandomAsync()
         {
             HttpRequestClient client = new HttpRequestClient();
             //HttpResponse<List<Gif>> response = new HttpResponse<List<Gif>>();
-            HttpResponse<Gif> response = await client.GetAsync<HttpResponse<Gif>>(BaseUrl + "/random?api_key=uDl0yncHQqgk1r6zkkCh0tNkHGqpQmUn");
+            HttpResponse<GifGiphy> response = await client.GetAsync<HttpResponse<GifGiphy>>(BaseUrl + "/random?api_key=uDl0yncHQqgk1r6zkkCh0tNkHGqpQmUn");
 
             return response.Data;
         }
