@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Gif } from '../models/gif';
+import { GifGiphy } from '../models/gif';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class GiphyService {
 
   constructor(private http: HttpClient) {}
 
-  getGif(): Observable<Gif> {
-    return this.http.get<Gif>(`${this.api}/Giphy/random`);
+  getGif(): Observable<GifGiphy> {
+    return this.http.get<GifGiphy>(`${this.api}/api/giphy/random`);
   }
 }
