@@ -9,10 +9,11 @@ import { BattleService } from './services/battle.service';
 import { HomeComponent } from './home/home.component';
 import { VersusComponent } from './versus/versus.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, CreateComponent, HomeComponent, VersusComponent, LeaderboardComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [BattleService],
   bootstrap: [AppComponent]
 })
