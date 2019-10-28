@@ -7,9 +7,10 @@ import { CreateComponent } from './create/create.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BattleService } from './services/battle.service';
 import { HomeComponent } from './home/home.component';
+import { VersusComponent } from './versus/versus.component';
 
 @NgModule({
-  declarations: [AppComponent, CreateComponent, HomeComponent],
+  declarations: [AppComponent, CreateComponent, HomeComponent, VersusComponent],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [BattleService],
   bootstrap: [AppComponent]

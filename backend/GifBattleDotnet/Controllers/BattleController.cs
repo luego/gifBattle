@@ -12,7 +12,8 @@ namespace GifBattleDotnet.Controllers
     {
         private readonly IRepositoryWrapper _repoWrapper;
 
-        public BattleController(IRepositoryWrapper repoWrapper){
+        public BattleController(IRepositoryWrapper repoWrapper)
+        {
             this._repoWrapper = repoWrapper;
         }
 
@@ -21,24 +22,33 @@ namespace GifBattleDotnet.Controllers
         public IEnumerable<Gif> Versus()
         {
             var rnd = new System.Random();
-            var gifAll = _repoWrapper.Gif.FindAll().OrderBy(item => rnd.Next()).Take(2);           
-    
+            var gifAll = _repoWrapper.Gif.FindAll().OrderBy(item => rnd.Next()).Take(2);
+
             return gifAll;
         }
 
         [HttpPost]
         [Route("create")]
-        public Gif Create([FromBody] Gif gif){
+        public Gif Create([FromBody] Gif gif)
+        {
             return _repoWrapper.Gif.Create(gif);
         }
 
         [HttpPost]
         [Route("vote")]
-        public Gif Vote([FromBody] string id){
-            IGifRepository gif =  _repoWrapper.Gif;
-            var model = gif.FindOneByCondition(x => x.Id == id);
+        public Gif Vote([FromBody] GifVM gif)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                BadRequest();
+            }
+
+            IGifRepository gifRepo = _repoWrapper.Gif;
+            var model = gifRepo.FindOneByCondition(x => x.Id == gif.Id);
             model.Vote += 1;
-            gif.Update(x => x.Id == id,model);
+
+            gifRepo.Update(x => x.Id == model.Id, model);
             return model;
         }
     }

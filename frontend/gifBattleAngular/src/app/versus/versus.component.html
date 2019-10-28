@@ -1,0 +1,8 @@
+<p>Vote right now</p>
+<div>
+  <div *ngFor="let gif of gifs$ | async">
+    <img [src]="gif.url" /><br />
+    <button (click)="vote(gif.id)">Vote!</button>
+    <hr />
+  </div>
+</div>
