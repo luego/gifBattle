@@ -51,5 +51,14 @@ namespace GifBattleDotnet.Controllers
             gifRepo.Update(x => x.Id == model.Id, model);
             return model;
         }
+
+        [HttpGet]
+        [Route("leaderboard")]
+        public IEnumerable<Gif> GetAll()
+        {
+            var gifAll = _repoWrapper.Gif.FindAll().Take(10).OrderByDescending(item => item.Vote);
+            return gifAll;
+        }
+
     }
 }

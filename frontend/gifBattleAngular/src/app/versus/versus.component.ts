@@ -14,7 +14,6 @@ export class VersusComponent implements OnInit {
   gifs$: Observable<Gif[]>;
 
   ngOnInit() {
-    console.log('cargar');
     this.loadVersus();
   }
 
@@ -23,6 +22,6 @@ export class VersusComponent implements OnInit {
   }
 
   vote(id: string) {
-    this.http.vote(id).subscribe(x => console.log(x));
+    this.http.vote(id).subscribe(() => this.loadVersus());
   }
 }

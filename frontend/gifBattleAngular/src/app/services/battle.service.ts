@@ -33,6 +33,12 @@ export class BattleService {
       .pipe(catchError(this.handleError<Gif>('api/battle/vote')));
   }
 
+  leaderBoard(): Observable<Gif[]> {
+    return this.http
+      .get<Gif[]>(`${this.api}/api/battle/leaderboard`)
+      .pipe(catchError(this.handleError<Gif[]>('api/battle/leaderboard')));
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

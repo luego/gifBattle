@@ -1,0 +1,7 @@
+<p>leaderboard works!</p>
+
+<div *ngFor="let gif of gifs$ | async">
+  <img [src]="gif.url" /><br />
+  <p>{{ gif.vote }}</p>
+  <hr />
+</div>
