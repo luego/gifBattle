@@ -10,10 +10,23 @@ import { HomeComponent } from './home/home.component';
 import { VersusComponent } from './versus/versus.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UiModule } from './ui/ui.module';
 
 @NgModule({
-  declarations: [AppComponent, CreateComponent, HomeComponent, VersusComponent, LeaderboardComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule],
+  declarations: [
+    AppComponent,
+    CreateComponent,
+    HomeComponent,
+    VersusComponent,
+    LeaderboardComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    UiModule
+  ],
   providers: [BattleService],
   bootstrap: [AppComponent]
 })
