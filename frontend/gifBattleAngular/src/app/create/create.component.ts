@@ -39,7 +39,6 @@ export class CreateComponent implements OnInit {
       vote: 0,
       id: ''
     };
-
     this.http_battle.create(gifObj).subscribe(
       x => {
         this.data = {

@@ -2,7 +2,7 @@
   <img [src]="data.url" /><br />
   Title : {{ data.title }}<br />
   <form action="" method="post">
-    <input type="text" name="caption" id="caption" />
+    <input type="text" name="caption" id="caption" [(ngModel)]="data.caption" />
     <br />
     <input type="button" value="Send" (click)="send()" />
   </form>
