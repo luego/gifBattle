@@ -1,0 +1,8 @@
+<mat-list>
+  <h3 mat-subheader>Order By Votes</h3>
+  <mat-list-item *ngFor="let gif of data" class="item-height">
+    <img matListAvatar [src]="gif.url" alt="Downloading" />
+    <p mat-line>{{ gif.vote }}</p>
+    <hr />
+  </mat-list-item>
+</mat-list>
