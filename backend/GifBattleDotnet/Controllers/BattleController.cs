@@ -56,7 +56,7 @@ namespace GifBattleDotnet.Controllers
         [Route("leaderboard")]
         public IEnumerable<Gif> GetAll()
         {
-            var gifAll = _repoWrapper.Gif.FindAll().Take(10).OrderByDescending(item => item.Vote);
+            var gifAll = _repoWrapper.Gif.FindAll().OrderByDescending(item => item.Vote);
             return gifAll;
         }
 
